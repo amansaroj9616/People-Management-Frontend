@@ -1,0 +1,97 @@
+<div class="people-list-container">
+  <h2>People List</h2>
+  <button (click)="addPerson()" class="add-button">Add Person</button>
+  <ul class="people-list">
+    <li *ngFor="let person of people" class="person-item">
+      <span>{{ person.name }} ({{ person.age }})</span>
+      <div class="actions">
+        <button (click)="editPerson(person._id)" class="edit-button">Edit</button>
+        <button (click)="deletePerson(person._id)" class="delete-button">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .people-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .add-button:hover {
+    background-color: #45a049;
+  }
+
+  .people-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .person-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .person-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .edit-button, .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .edit-button {
+    background-color: #2196F3;
+    color: white;
+  }
+
+  .edit-button:hover {
+    background-color: #0b7dda;
+  }
+
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+</style>
